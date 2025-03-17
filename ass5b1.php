@@ -1,0 +1,62 @@
+<html>
+  <body>
+        <form method="post" acton="ass5a1.php">
+          
+              enter cuetomer name:
+                  <input type="text" name="t1"><br>
+              select product:
+          <select name="t2[]" multiple="multiple">            
+             <option value="pen">pen</option>
+                <option value="pencil">pencil</option>
+                <option value="book">book</option>
+                <option value="notebook">notebook</option>
+              </select><br>
+             quantity:
+                         <input type="text" name="t3"><br>
+            <input type="submit" value="check"><hr>
+   </body>
+</html>
+<?php
+ $n=$_POST["t1"];
+ $p=$_POST["t2"];
+ $q=$_POST["t3"];
+   foreach($p as $pr)
+{
+    echo("$pr");
+}
+   $r=0;$t=0;
+      if($p=="pen")
+           $t=$r=5*$q;
+  if($p=="pencil")
+           $t=$r=5*$q;
+  if($p=="book")
+           $t=$r=200*$q;
+  if($p=="notebook")
+           $t=$r=50*$q;
+  
+    echo("<br>");
+     echo("<table border='1'>");
+      echo("<tr>");
+       echo("<td>Name of customer</td>");
+       echo("<td>$n</td>");   
+      echo("</tr>");
+      
+      echo("<tr>");
+       echo("<td>product</td>");
+       echo("<td>$p</td>");   
+      echo("</tr>");
+
+      echo("<tr>");
+       echo("<td>quantity</td>");
+       echo("<td>$q</td>");   
+      echo("</tr>");
+
+      echo("<tr>");
+       echo("<td>Rate</td>");
+       echo("<td>$r</td>");   
+      echo("</tr>");
+
+       echo("<td>Total Salary</td>");
+       echo("<td>$t</td>");   
+      echo("</tr>");
+?>
